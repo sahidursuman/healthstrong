@@ -1,0 +1,121 @@
+<%= simple_form_for(@hospital) do |f| %>
+  <%= f.error_notification %>
+
+  <hr>
+  <h4 class="form-h4">Client details:</h4>
+
+  <div class="form-inputs">
+    <div class="row">
+      <div class="col-md-4">
+        <%= f.input :client_title %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :client_first_name %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :client_last_name %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :client_date_of_birth %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :client_nationality %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :client_language_spoken %>
+      </div>
+    </div>
+
+
+
+
+
+    <hr>
+    <h4 class="form-h4">Address:</h4>
+
+    <%= f.input :client_address1 %>
+    <%= f.input :client_address2 %>
+
+    <div class="row">
+      <div class="col-md-4">
+        <%= f.input :client_city %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :client_state %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :client_postcode %>
+      </div>
+    </div>
+
+
+    <hr>
+    <h4 class="form-h4">Contact details:</h4>
+    <div class="row">
+      <div class="col-md-4">
+        <%= f.input :client_primary_phone %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :client_secondary_phone %>
+      </div>
+      <div class="">
+        <%= f.input :client_email %>
+      </div>
+    </div>
+
+
+    <hr>
+    <h4 class="form-h4">Referral details:</h4>
+    <div class="row">
+      <div class="col-md-4">
+        <%= f.input :client_reason_for_referral %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :client_date_of_surgery %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :hospital_of_surgery %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :hospital_discharge_date %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :hospital_surgeon %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :hospital_surgeon_phone %>
+      </div>
+    </div>
+
+
+
+
+
+    <hr>
+    <h4 class="form-h4">Health insurance:</h4>
+    <div class="row">
+      <div class="col-md-4">
+        <%= f.input :health_insurance_name %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :health_insurance_number %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :health_insurance_client_manager_name %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :health_insurance_client_manager_contact_number %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :health_insurance_client_manager_email %>
+      </div>
+    </div>
+
+
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn btn-outline-primary"   %>
+  </div>
+<% end %>
+<br>
