@@ -56,7 +56,7 @@
 <hr>
 <h4 class="form-h4">DVA details:</h4>
 
-    <%= f.input :client_dva %>
+    <%= f.input :client_dva, label: "Is Care Through DVA?" %>
 
     <div class="row">
       <div class="col-md-4">
@@ -66,7 +66,7 @@
 
 <hr>
 <h4 class="form-h4">Next of kin details:</h4>
-    <%= f.input :next_of_kin %>
+    <%= f.input :next_of_kin, label: "Is the next of kin the same as Contact?" %>
 
     <div class="row">
       <div class="col-md-4">
@@ -82,11 +82,11 @@
 
 <hr>
 <h4 class="form-h4">Aboriginal:</h4>
-    <%= f.input :client_aboriginal %>
+    <%= f.input :client_aboriginal, label: "Is the client of Aboriginal or Torres Strait Islander Heritage?" %>
 
 <hr>
 <h4 class="form-h4">NDIS details:</h4>
-    <%= f.input :client_ndis %>
+    <%= f.input :client_ndis, label: "Is the client NDIS funded?" %>
 
     <div class="row">
       <div class="col-md-4">
@@ -102,7 +102,7 @@
 
 <hr>
 <h4 class="form-h4">Advanced care:</h4>
-    <%= f.input :client_advanced_care_directive %>
+    <%= f.input :client_advanced_care_directive, label: "Does the client have an Advance Care Directive?" %>
 
     <div class="row">
       <div class="col-md-8">
@@ -121,7 +121,7 @@
 <hr>
 <h4 class="form-h4">Invoice details:</h4>
 
-<%= f.input :client_invoice %>
+<%= f.input :client_invoice, label: "Is Invoice Name and Address the same as Client Name and Address?"  %>
 
     <div class="row">
       <div class="col-md-4">
