@@ -3,7 +3,7 @@
     <h1>Community referral</h1>
   </div>
   <div class="col-md-6 col-sm-6 col-6 text-right">
-    <a class="btn btn-outline-primary" href="<%= new_community_path %>">New</a>
+    <a class="btn btn-outline-primary" href="<%= new_admin_community_path %>">New</a>
   </div>
 </div>
 
@@ -23,9 +23,9 @@
         <td><%= community.client_first_name %></td>
         <td><%= community.client_last_name %></td>
         <td><%= community.client_date_of_birth %></td>
-        <td><%= link_to 'Show', community %></td>
-        <td><%= link_to 'Edit', edit_community_path(community) %></td>
-        <td><%= link_to 'Destroy', community, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', admin_community_path(community) %></td>
+        <td><%= link_to 'Edit', edit_admin_community_path(community) %></td>
+        <td><%= link_to 'Destroy', admin_community_path(community), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
