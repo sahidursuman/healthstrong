@@ -38,7 +38,7 @@
           <%= f.input :client_state %>
         </div>
       </div>
-  <hr>
+
   <h4 class="form-h4">Contact details</h4>
       <div class="row">
         <div class="col-md-4">
@@ -57,7 +57,7 @@
           <%= f.input :contact_relationship %>
         </div>
       </div>
-  <hr>
+
   <h4 class="form-h4">DVA details</h4>
 
       <%= f.input :client_dva, label: "Is Care Through DVA?" %>
@@ -68,7 +68,7 @@
         </div>
       </div>
 
-  <hr>
+
   <h4 class="form-h4">Next of kin details</h4>
       <%= f.input :next_of_kin, label: "Is the next of kin the same as Contact?" %>
 
@@ -84,11 +84,11 @@
         </div>
       </div>
 
-  <hr>
+
   <h4 class="form-h4">Aboriginal</h4>
       <%= f.input :client_aboriginal, label: "Is the client of Aboriginal or Torres Strait Islander Heritage?" %>
 
-  <hr>
+
   <h4 class="form-h4">NDIS details</h4>
       <%= f.input :client_ndis, label: "Is the client NDIS funded?" %>
 
@@ -104,7 +104,7 @@
         </div>
       </div>
 
-  <hr>
+
   <h4 class="form-h4">Advanced care</h4>
       <%= f.input :client_advanced_care_directive, label: "Does the client have an Advance Care Directive?" %>
 
@@ -114,7 +114,7 @@
         </div>
       </div>
 
-  <hr>
+
   <h4 class="form-h4">Medical & social history</h4>
       <div class="row">
         <div class="col-md-8">
@@ -122,7 +122,7 @@
         </div>
       </div>
 
-  <hr>
+
   <h4 class="form-h4">Invoice details</h4>
 
   <%= f.input :client_invoice, label: "Is Invoice Name and Address the same as Client Name and Address?"  %>
@@ -148,7 +148,7 @@
         </div>
       </div>
 
-  <hr>
+
   <h4 class="form-h4">Referrer details</h4>
     <div class="row">
       <div class="col-md-4">
@@ -169,10 +169,13 @@
 
     </div>
 
-    <hr>
+<br>
+<br>
+<br>
+<br>
     <div class="text-center">
-      <button class="btn btn-outline-success">
-        Create Community
+      <button class="btn btn-outline-primary">
+        Submit Community Referral
       </button>
     </div>
   <% end %>
