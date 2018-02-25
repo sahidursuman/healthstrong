@@ -1,5 +1,4 @@
-class CommunitiesController < ApplicationController
-  before_action :authenticate_user!
+class Admin::CommunitiesController < Admin::BaseController
   before_action :set_community, only: [:show, :edit, :update, :destroy]
 
   # GET /communities
@@ -29,7 +28,7 @@ class CommunitiesController < ApplicationController
 
     respond_to do |format|
       if @community.save
-        format.html { redirect_to @community, notice: 'Community was successfully created.' }
+        format.html { redirect_to admin_communities_path, notice: 'Community was successfully created.' }
         format.json { render :show, status: :created, location: @community }
       else
         format.html { render :new }
@@ -43,7 +42,7 @@ class CommunitiesController < ApplicationController
   def update
     respond_to do |format|
       if @community.update(community_params)
-        format.html { redirect_to @community, notice: 'Community was successfully updated.' }
+        format.html { redirect_to admin_communities_path, notice: 'Community was successfully updated.' }
         format.json { render :show, status: :ok, location: @community }
       else
         format.html { render :edit }
@@ -57,7 +56,7 @@ class CommunitiesController < ApplicationController
   def destroy
     @community.destroy
     respond_to do |format|
-      format.html { redirect_to communities_url, notice: 'Community was successfully destroyed.' }
+      format.html { redirect_to admin_communities_path, notice: 'Community was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
