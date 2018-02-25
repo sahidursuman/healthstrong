@@ -1,34 +1,179 @@
-<div class="row">
-  <div class="col-md-6 col-sm-6 col-6">
-    <h1>Community referral</h1>
-  </div>
-  <div class="col-md-6 col-sm-6 col-6 text-right">
-    <a class="btn btn-outline-primary" href="<%= new_community_path %>">New</a>
-  </div>
-</div>
+<section class="logo-center">
+  <a href="/"></a>
+</section>
 
-<table class="table table-striped table-hover">
-  <thead>
-    <tr>
-      <th>Client first name</th>
-      <th>Client last name</th>
-      <th>Client date of birth</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<section class="public-form">
+  <%= simple_form_for(@community) do |f| %>
+  <h4 class="form-h4">Client details</h4>
+    <div class="form-inputs">
+      <div class="row">
+        <div class="col-md-4">
+          <%= f.input :client_title %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :client_first_name %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :client_last_name %>
+        </div>
+      </div>
 
-  <tbody>
-    <% @communities.each do |community| %>
-      <tr>
-        <td><%= community.client_first_name %></td>
-        <td><%= community.client_last_name %></td>
-        <td><%= community.client_date_of_birth %></td>
-        <td><%= link_to 'Show', community %></td>
-        <td><%= link_to 'Edit', edit_community_path(community) %></td>
-        <td><%= link_to 'Destroy', community, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <div class="row">
+        <div class="col-md-4">
+          <%= f.input :client_date_of_birth, input_html: { class: 'datepicker' } %>
+        </div>
+      </div>
 
-<br>
+      <%= f.input :client_address_1 %>
+      <%= f.input :client_address_2 %>
+
+      <div class="row">
+        <div class="col-md-4">
+          <%= f.input :client_city %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :client_postcode %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :client_state %>
+        </div>
+      </div>
+  <hr>
+  <h4 class="form-h4">Contact details</h4>
+      <div class="row">
+        <div class="col-md-4">
+          <%= f.input :contact_first_name %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :contact_last_name %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :contact_phone %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :service_provider %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :contact_relationship %>
+        </div>
+      </div>
+  <hr>
+  <h4 class="form-h4">DVA details</h4>
+
+      <%= f.input :client_dva, label: "Is Care Through DVA?" %>
+
+      <div class="row">
+        <div class="col-md-4">
+          <%= f.input :client_dva_number %>
+        </div>
+      </div>
+
+  <hr>
+  <h4 class="form-h4">Next of kin details</h4>
+      <%= f.input :next_of_kin, label: "Is the next of kin the same as Contact?" %>
+
+      <div class="row">
+        <div class="col-md-4">
+          <%= f.input :next_of_kin_relationship %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :next_of_kin_name %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :next_of_kin_phone %>
+        </div>
+      </div>
+
+  <hr>
+  <h4 class="form-h4">Aboriginal</h4>
+      <%= f.input :client_aboriginal, label: "Is the client of Aboriginal or Torres Strait Islander Heritage?" %>
+
+  <hr>
+  <h4 class="form-h4">NDIS details</h4>
+      <%= f.input :client_ndis, label: "Is the client NDIS funded?" %>
+
+      <div class="row">
+        <div class="col-md-4">
+          <%= f.input :client_ndis_number %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :client_ndis_plan_start %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :client_ndis_end_date %>
+        </div>
+      </div>
+
+  <hr>
+  <h4 class="form-h4">Advanced care</h4>
+      <%= f.input :client_advanced_care_directive, label: "Does the client have an Advance Care Directive?" %>
+
+      <div class="row">
+        <div class="col-md-8">
+          <%= f.input :client_advanced_care_directive_notes %>
+        </div>
+      </div>
+
+  <hr>
+  <h4 class="form-h4">Medical & social history</h4>
+      <div class="row">
+        <div class="col-md-8">
+          <%= f.input :client_medical_social_history %>
+        </div>
+      </div>
+
+  <hr>
+  <h4 class="form-h4">Invoice details</h4>
+
+  <%= f.input :client_invoice, label: "Is Invoice Name and Address the same as Client Name and Address?"  %>
+
+      <div class="row">
+        <div class="col-md-4">
+          <%= f.input :client_invoice_name %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :client_invoice_address1 %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :client_invoice_address2 %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :client_invoice_city %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :client_invoice_state %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :client_invoice_postcode %>
+        </div>
+      </div>
+
+  <hr>
+  <h4 class="form-h4">Referrer details</h4>
+    <div class="row">
+      <div class="col-md-4">
+        <%= f.input :referrer_name %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :referrer_date %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :referrer_email %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :referrer_phone %>
+      </div>
+    </div>
+
+    <%= f.input :referrer_urgent %>
+
+    </div>
+
+    <hr>
+    <div class="text-center">
+      <button class="btn btn-outline-success">
+        Create Community
+      </button>
+    </div>
+  <% end %>
+</section>

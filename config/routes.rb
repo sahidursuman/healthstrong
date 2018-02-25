@@ -3,9 +3,19 @@ Rails.application.routes.draw do
 
   get 'fronts/Community'
 
-  resources :hospitals
+  resources :hospitals, path: 'hospital-in-home-referral' do
+    collection do
+      get :success
+    end
+  end
   resources :client_titles
-  resources :communities
+
+  resources :communities, path: 'community-referral' do
+    collection do
+      get :success
+    end
+  end
+
   root to: 'visitors#index'
 
   devise_for :users, controllers: {
@@ -17,5 +27,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :users
+    resources :hospitals
+    resources :communities
   end
 end

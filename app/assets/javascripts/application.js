@@ -12,7 +12,9 @@
 //
 //= require jquery3
 //= require popper
+//= require moment
 //= require bootstrap-sprockets
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+//= require main

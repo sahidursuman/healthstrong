@@ -1,38 +1,114 @@
-<div class="row">
-  <div class="col-md-6 col-sm-6 col-6">
-    <h1>Hospital in home referral</h1>
-  </div>
-  <div class="col-md-6 col-sm-6 col-6 text-right">
-    <a class="btn btn-outline-primary" href="<%= new_hospital_path %>">New</a>
-  </div>
-</div>
+<section class="logo-center">
+  <a href="/"></a>
+</section>
 
-<table class="table table-striped table-hover">
-  <thead>
-    <tr>
-      <th>Client title</th>
-      <th>Client first name</th>
-      <th>Client last name</th>
-      <th>Client date of birth</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<section class="public-form">
+  <%= simple_form_for(@hospital) do |f| %>
+    <%= f.error_notification %>
+    <h4 class="form-h4">Client details</h4>
 
-  <tbody>
-    <% @hospitals.each do |hospital| %>
-      <tr>
-        <td><%= hospital.client_title %></td>
-        <td><%= hospital.client_first_name %></td>
-        <td><%= hospital.client_last_name %></td>
-        <td><%= hospital.client_date_of_birth %></td>
-        <td><%= link_to 'Show', hospital %></td>
-        <td><%= link_to 'Edit', edit_hospital_path(hospital) %></td>
-        <td><%= link_to 'Destroy', hospital, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <div class="form-inputs">
+      <div class="row">
+        <div class="col-md-4">
+          <%= f.input :client_title %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :client_first_name %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :client_last_name %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :client_date_of_birth %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :client_nationality %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :client_language_spoken %>
+        </div>
+      </div>
 
-<br>
+      <hr>
+      <h4 class="form-h4">Address</h4>
 
-<%= link_to 'New Hospital Referral', new_hospital_path %>
+      <%= f.input :client_address1 %>
+      <%= f.input :client_address2 %>
+
+      <div class="row">
+        <div class="col-md-4">
+          <%= f.input :client_city %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :client_state %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :client_postcode %>
+        </div>
+      </div>
+
+      <hr>
+      <h4 class="form-h4">Contact details</h4>
+      <div class="row">
+        <div class="col-md-4">
+          <%= f.input :client_primary_phone %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :client_secondary_phone %>
+        </div>
+        <div class="">
+          <%= f.input :client_email %>
+        </div>
+      </div>
+
+      <hr>
+      <h4 class="form-h4">Referral details</h4>
+      <div class="row">
+        <div class="col-md-4">
+          <%= f.input :client_reason_for_referral %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :client_date_of_surgery %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :hospital_of_surgery %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :hospital_discharge_date %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :hospital_surgeon %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :hospital_surgeon_phone %>
+        </div>
+      </div>
+
+      <hr>
+      <h4 class="form-h4">Health insurance</h4>
+      <div class="row">
+        <div class="col-md-4">
+          <%= f.input :health_insurance_name %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :health_insurance_number %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :health_insurance_client_manager_name %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :health_insurance_client_manager_contact_number %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :health_insurance_client_manager_email %>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="text-center">
+      <button class="btn btn-outline-success">
+        Create Hospital
+      </button>
+    </div>
+  <% end %>
+</section>
