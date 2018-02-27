@@ -35,7 +35,7 @@
           <%= f.input :client_postcode %>
         </div>
         <div class="col-md-4">
-          <%= f.input :client_state %>
+          <%= f.input :client_state, collection: ['VIC', 'NSW', 'QLD', 'ACT', 'NT', 'WA', 'SA'] %>
         </div>
       </div>
 
