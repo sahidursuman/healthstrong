@@ -10,7 +10,7 @@
     <div class="form-inputs">
       <div class="row">
         <div class="col-md-4">
-          <%= f.input :client_title %>
+          <%= f.input :client_title, collection: ['Mr', 'Mrs', 'Miss', 'Dr'] %>
         </div>
         <div class="col-md-4">
           <%= f.input :client_first_name %>

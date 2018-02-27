@@ -33,4 +33,20 @@
 #
 
 class Hospital < ApplicationRecord
+
+  validates_presence_of :client_first_name,
+                        :client_last_name,
+                        :client_date_of_birth,
+                        :client_address1,
+                        :client_city,
+                        :client_state,
+                        :client_postcode,
+                        :client_primary_phone,
+                        :client_reason_for_referral,
+                        :client_date_of_surgery,
+                        :hospital_of_surgery,
+                        :hospital_surgeon,
+                        :health_insurance_name,
+                        :health_insurance_number
+
 end

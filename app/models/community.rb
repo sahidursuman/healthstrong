@@ -48,4 +48,20 @@
 #
 
 class Community < ApplicationRecord
+
+  validates_presence_of :client_first_name,
+                        :client_last_name,
+                        :client_date_of_birth,
+                        :client_address1,
+                        :client_city,
+                        :client_postcode,
+                        :client_state,
+                        :client_state,
+                        :contact_first_name,
+                        :contact_last_name,
+                        :contact_phone,
+                        :service_provider,
+                        :contact_relationship
+
+
 end
